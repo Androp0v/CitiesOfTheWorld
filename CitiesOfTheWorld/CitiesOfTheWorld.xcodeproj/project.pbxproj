@@ -22,6 +22,7 @@
 		C54066E127451B9300710CFC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54066E027451B9300710CFC /* MapViewModel.swift */; };
 		C54066E32745213600710CFC /* MapErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54066E22745213600710CFC /* MapErrors.swift */; };
 		C54066E52745274900710CFC /* CityListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54066E42745274900710CFC /* CityListRow.swift */; };
+		C54066E7274B0CF500710CFC /* CityAPICache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54066E6274B0CF500710CFC /* CityAPICache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C54066E027451B9300710CFC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		C54066E22745213600710CFC /* MapErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapErrors.swift; sourceTree = "<group>"; };
 		C54066E42745274900710CFC /* CityListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListRow.swift; sourceTree = "<group>"; };
+		C54066E6274B0CF500710CFC /* CityAPICache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPICache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				C504C9FD27430A14002D4E6A /* Data Structures */,
 				C504CA002743145B002D4E6A /* CityAPI.swift */,
+				C54066E6274B0CF500710CFC /* CityAPICache.swift */,
 				C54066DD2745144900710CFC /* CityAPIEndpoint.swift */,
 				C54066D92743D8A500710CFC /* CityAPIErrors.swift */,
 			);
@@ -220,6 +223,7 @@
 				C504C9F62742DC49002D4E6A /* CityListViewModel.swift in Sources */,
 				C504C9EB2742C14B002D4E6A /* MapView.swift in Sources */,
 				C54066E52745274900710CFC /* CityListRow.swift in Sources */,
+				C54066E7274B0CF500710CFC /* CityAPICache.swift in Sources */,
 				C54066E127451B9300710CFC /* MapViewModel.swift in Sources */,
 				C504CA012743145B002D4E6A /* CityAPI.swift in Sources */,
 				C504C9D72742C0BF002D4E6A /* CitiesOfTheWorldApp.swift in Sources */,

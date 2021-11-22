@@ -10,13 +10,13 @@ import Foundation
 actor CityAPI {
     
     // MARK: - Properties
-    private var cachedResponses = NSCache<NSString, CityResponse>()
+    private var cityCache = CityAPICache()
     
     // MARK: - Initialization
     static let shared = CityAPI()
     private init() { }
     
-    // MARK: - Public functions
+    // MARK: - City data retrieval
     
     /// Retrieve the city data for a given search from either local cache or a network request.
     /// - Parameter searchText: Search query.
@@ -67,17 +67,28 @@ actor CityAPI {
             throw CityAPIError.invalidResponseData
         }
     }
-    
-    // MARK: - Caching
         
-    private func getFromLocalCache(url: URL) -> CityResponse? {
-        let urlString = url.absoluteString as NSString
-        return self.cachedResponses.object(forKey: urlString)
+    // MARK: - Caching
+    
+    /// Save latest cache entries to disk.
+    public func persistCache() {
+        self.cityCache.writeToDisk()
     }
     
+    /// Try to get URL from local cache (if present).
+    /// - Parameter url: URL of the API request.
+    /// - Returns: The response object.
+    private func getFromLocalCache(url: URL) -> CityResponse? {
+        return self.cityCache.getCachedResponse(url: url)
+    }
+    
+    
+    /// Save response to local cache.
+    /// - Parameters:
+    ///   - url: URL of the API request.
+    ///   - cityResponse: The response object.
     private func writeToLocalCache(url: URL, cityResponse: CityResponse) {
-        let urlString = url.absoluteString as NSString
-        self.cachedResponses.setObject(cityResponse, forKey: urlString)
+        self.cityCache.writeResponseToCache(url: url, cityResponse: cityResponse)
     }
     
 }

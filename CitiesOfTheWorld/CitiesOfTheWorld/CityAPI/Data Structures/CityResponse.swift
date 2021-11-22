@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Country: Decodable {
+struct Country: Codable {
     let id: Int
     let name: String
     let code: String
@@ -16,7 +16,7 @@ struct Country: Decodable {
     let continent_id: Int
 }
 
-struct CityItem: Decodable {
+struct CityItem: Codable {
     let id: Int
     let name: String
     let local_name: String
@@ -29,19 +29,19 @@ struct CityItem: Decodable {
     let country: Country?
 }
 
-struct Pagination: Decodable {
+struct Pagination: Codable {
     let current_page: Int
     let last_page: Int
     let per_page: Int
     let total: Int
 }
 
-struct CityData: Decodable {
+struct CityData: Codable {
     let items: [CityItem]
     let pagination: Pagination
 }
 
-class CityResponse: Decodable {
+class CityResponse: Codable {
     let data: CityData
     let time: Int
 }

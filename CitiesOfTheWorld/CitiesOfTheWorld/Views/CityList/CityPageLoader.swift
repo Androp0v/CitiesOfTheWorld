@@ -87,6 +87,11 @@ actor CityPageLoader {
     
     // MARK: - UI updates
     
+    /// Adds additional rows to the existing data on a given CityListViewModel.
+    /// - Parameters:
+    ///   - items: The items to add.
+    ///   - cityListViewModel: The city list view model object.
+    ///   - shouldClearList: Whether the existing data on the city list view model should be deleted before adding the new rows.
     func addNewItemsToList(items: [CityItem], cityListViewModel: CityListViewModel, shouldClearList: Bool) {
         DispatchQueue.main.sync {
             // Clear the list if required
@@ -102,10 +107,15 @@ actor CityPageLoader {
     
     // MARK: - Private methods
     
+    /// Checks if the search query being handled matches the current search query of the CityPageLoader actor.
+    /// - Parameter searchText: The search query.
+    /// - Returns: True, if the queries match, false otherwise.
     private func isCurrentQuery(searchText: String) -> Bool {
         return searchText == currentSearchQuery
     }
     
+    /// Deletes all rows from the view model of the city list.
+    /// - Parameter cityListViewModel: The city list view model object.
     private nonisolated func clearItems(cityListViewModel: CityListViewModel) {
         DispatchQueue.main.sync {
             cityListViewModel.cityItems = []

@@ -12,6 +12,7 @@ enum MapError: Error {
     case noCityItem
 }
 
+// Localized descriptions for API errors could be built here
 extension MapError: LocalizedError {
     public var errorDescription: String? {
         switch self {

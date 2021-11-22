@@ -18,7 +18,7 @@ enum CityAPIError: Error {
     case unknown
 }
 
-// Localized descriptions for API errors could be build here
+// Localized descriptions for API errors could be built here
 extension CityAPIError: LocalizedError {
     public var errorDescription: String? {
         switch self {
