@@ -35,6 +35,8 @@ actor CityAPI {
         }
         components.queryItems?.append(URLQueryItem(name: CityAPIEndpointParameters.page.rawValue,
                                                    value: String(page)))
+        components.queryItems?.append(URLQueryItem(name: CityAPIEndpointParameters.include.rawValue,
+                                                   value: "country"))
 
         guard let url = components.url else {
             throw CityAPIError.malformedURL

@@ -13,7 +13,10 @@ enum CityAPIEndpoint: String {
 }
 
 enum CityAPIEndpointParameters: String {
+    /// The page to be retrieved.
     case page = "page"
-    case include = "include=country"
+    /// Whether or not to include the country data.
+    case include = "include"
+    /// Parameter to filter the cities by name in the API.
     case filterByName = "filter[0][name][contains]"
 }
