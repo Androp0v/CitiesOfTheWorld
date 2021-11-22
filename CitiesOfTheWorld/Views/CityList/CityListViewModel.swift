@@ -51,11 +51,9 @@ class CityListViewModel: ObservableObject {
             try await cityPageLoader.loadPage(page: currentPage + 1, searchText: searchText, cityListViewModel: self)
         }
     }
-    
-    // MARK: - Private functions
-    
+        
     /// Loads the city list returned on an empty search query.
-    private func loadInitialCities() async throws {
+    func loadInitialCities() async throws {
         try await cityPageLoader.loadPage(page: 1, searchText: "", cityListViewModel: self)
     }
 }

@@ -64,8 +64,9 @@ struct CityListView: View {
             // Use onChange only to detect the search box being cleared
             .onChange(of: searchText) { newText in
                 if newText.isEmpty {
-                    // TO-DO:
-                    print("Search cleared!")
+                    Task {
+                        try await viewModel.loadInitialCities()
+                    }
                 }
             }
             // Only make queries when the submit button is pressed
